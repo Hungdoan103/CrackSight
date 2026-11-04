@@ -1,0 +1,251 @@
+.darwin-shell {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b1220;
+  color: #e2e8f0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+.darwin-top {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #1e293b;
+  background: #0f172a;
+}
+.darwin-top h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.darwin-top p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #94a3b8;
+}
+.darwin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lang-switch button {
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  background: #1e293b;
+  border: 0;
+  cursor: pointer;
+}
+.lang-switch button.on {
+  background: #2563eb;
+  color: #fff;
+}
+.darwin-actions a,
+.darwin-actions button {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.darwin-actions button.on {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+.darwin-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.darwin-exag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #cbd5e1;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+}
+.darwin-exag input[type="range"] {
+  width: 96px;
+  accent-color: #38bdf8;
+}
+.darwin-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+#darwin-map,
+.darwin-engine-mount {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #0b1220;
+}
+.darwin-license {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  pointer-events: none;
+  user-select: none;
+}
+.darwin-license-data {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+.darwin-license-org {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e2e8f0;
+  line-height: 1.25;
+}
+.darwin-status {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  max-width: min(520px, calc(100% - 24px));
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid #334155;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #cbd5e1;
+}
+.darwin-status b { color: #f8fafc; }
+.darwin-status.warn { border-color: #b45309; color: #fde68a; }
+.darwin-status-meta {
+  display: block;
+  margin-top: 4px;
+  color: #94a3b8;
+}
+.darwin-status.warn .darwin-status-meta {
+  color: #fde68a;
+}
+
+/* MapLibre controls on dark chrome */
+.maplibregl-ctrl-group {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+}
+.maplibregl-ctrl-group button {
+  background-color: #1e293b !important;
+}
+.maplibregl-ctrl button.maplibregl-ctrl-compass .maplibregl-ctrl-compass-arrow {
+  filter: invert(1);
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(15, 23, 42, 0.75) !important;
+  color: #94a3b8 !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: #cbd5e1 !important;
+}
+
+/* Photo GPS markers (EXIF from conglo uploads) */
+.maplibregl-marker.darwin-gps-wrap,
+.maplibregl-marker:has(.darwin-gps-pin) {
+  width: 48px !important;
+  height: 48px !important;
+}
+.darwin-gps-pin {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  padding: 0 !important;
+  border-radius: 10px;
+  border: 2px solid #fbbf24;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+  overflow: hidden !important;
+  cursor: pointer;
+  background: #0f172a;
+  position: relative;
+  box-sizing: border-box;
+}
+.darwin-gps-pin img {
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  object-fit: cover !important;
+  display: block;
+}
+.darwin-gps-pin.crack {
+  border-color: #f87171;
+}
+.darwin-gps-pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  border-right: 2px solid #fbbf24;
+  border-bottom: 2px solid #fbbf24;
+  transform: translateX(-50%) rotate(45deg);
+  background: #fbbf24;
+}
+.darwin-gps-pin.crack::after {
+  border-color: #f87171;
+  background: #f87171;
+}
+.darwin-gps-popup {
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.35;
+  max-width: 200px;
+}
+.darwin-gps-popup img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  display: block;
+}
+.darwin-gps-popup strong {
+  display: block;
+  margin-bottom: 2px;
+  word-break: break-all;
+}
+.darwin-gps-popup span {
+  color: #475569;
+}
+.darwin-gps-popup .darwin-gps-addr {
+  display: block;
+  margin: 2px 0 4px;
+  color: #0f172a;
+  font-weight: 600;
+}
