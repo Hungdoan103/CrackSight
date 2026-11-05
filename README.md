@@ -8,7 +8,8 @@
   <a href="#quick-start">Quick start</a> ·
   <a href="#configuration">Configuration</a> ·
   <a href="#api">API</a> ·
-  <a href="#project-structure">Structure</a>
+  <a href="#project-structure">Structure</a> ·
+  <a href="#license">License</a>
 </p>
 
 <p align="center">
@@ -17,7 +18,7 @@
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white" />
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-CUDA-EE4C2C?logo=pytorch&logoColor=white" />
   <img alt="MapLibre" src="https://img.shields.io/badge/MapLibre-GL-3366FF?logo=maplibre&logoColor=white" />
-  <img alt="License" src="https://img.shields.io/badge/License-Private-lightgrey" />
+  <img alt="License" src="https://img.shields.io/badge/License%20data-CivilTech%20Solution-0B3D2E" />
 </p>
 
 ---
@@ -229,11 +230,24 @@ Point `CRACKVLM_ROOT` at your CrackVLM tree for production weights.
 
 ## License
 
-Private / internal FPT project unless otherwise stated by the owners.
+**License data — CivilTech Solution**
+
+Copyright © **CivilTech Solution**. All rights reserved.
+
+DeepInspect (CrackInspect) — including source code, documentation, branding, and map / LiDAR license attribution — is proprietary to CivilTech Solution unless otherwise noted in writing.
+
+| Item | Detail |
+|------|--------|
+| **Rights holder** | CivilTech Solution |
+| **On-map attribution** | Darwin UI shows **License data** / **CivilTech Solution** (top-right) |
+| **Covered assets** | Application code, branding, licensed map & geospatial / LiDAR materials |
+| **Full text** | See [`LICENSE`](./LICENSE) in this repository |
+
+Unauthorized copying, modification, distribution, or commercial use is prohibited without prior written permission from CivilTech Solution.
 
 ---
 
 <p align="center">
   <b>CrackInspect</b> — DeepInspect · Vision-Language · Darwin LiDAR<br/>
-  Built for concrete infrastructure inspection workflows.
+  License data · CivilTech Solution
 </p>
