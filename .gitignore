@@ -60,11 +60,8 @@ models/
 *.engine
 *.trt
 
-# BasicVSR++ checkpoints (repo submodule-like tree may stay; weights go)
-BasicVSR_PlusPlus/chkpts/
-BasicVSR_PlusPlus/**/*.pth
-BasicVSR_PlusPlus/**/*.pt
-BasicVSR_PlusPlus/mmedit.egg-info/
+# BasicVSR++ (local clone / nested repo — not published)
+BasicVSR_PlusPlus/
 
 # Hugging Face / download caches
 **/.cache/
