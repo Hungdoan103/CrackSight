@@ -27,9 +27,9 @@
 
 Most demos draw fancy boxes. CrackInspect is built for **inspection workflows**:
 
-- **Real masks** from DeepInspect (Conglomerate + LCW), not decorative overlays  
+- **Real masks** from DeepInspect (close-up + field models), not decorative overlays  
 - **Honest measurements** — mm / GPS only from CSV + EXIF when metadata exists  
-- **Scene-aware routing** — field photos → LCW; close-ups → Conglomerate  
+- **Scene-aware routing** — field photos → field model; close-ups → close-up model  
 - **Bilingual UI** — Vietnamese / English end-to-end (including burned-in panel captions)  
 - **Spatial context** — Darwin satellite + WebGL LiDAR 3D + photo GPS pins with reverse-geocoded addresses  
 
@@ -55,7 +55,7 @@ Most demos draw fancy boxes. CrackInspect is built for **inspection workflows**:
 flowchart LR
   UI["Next.js UI\n:3000"] --> API["FastAPI\n:8000"]
   API --> Route["Scene router\nfield / close-up"]
-  Route --> DI["DeepInspect\nConglomerate · LCW"]
+  Route --> DI["DeepInspect\nclose-up · field"]
   DI --> Overlay["Mask · boxes · panel"]
   API --> VLM["Ollama\nQwen3-VL"]
   VLM --> Report["Caption · structure · agents"]
@@ -159,7 +159,7 @@ Copy `.env.example` → `.env` (or export env vars):
 ## Usage
 
 1. Open the web app → choose **VI / EN**.  
-2. Drop JPG/PNG (Conglomerate close-ups and/or LCW field shots).  
+2. Drop JPG/PNG (close-up photos and/or field shots).  
 3. Set image source if known → **Detect**.  
 4. Review **DeepInspect** overlay, **Panel 4** metrics, crack list, VLM / structure tabs.  
 5. Open **Darwin Map** to see LiDAR + GPS pins from the latest Detect batch (when EXIF/CSV has coordinates).
