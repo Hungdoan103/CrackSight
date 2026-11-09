@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 import unicodedata
 
-from .grade import grade_from_ratio
+from ..detection.grade import grade_from_ratio
 from .ollamaClient import extract_vietnamese
 from .summarize import _exif_line, _position, build_review, format_detail_from_instances
 

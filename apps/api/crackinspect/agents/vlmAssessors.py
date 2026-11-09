@@ -6,9 +6,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
-from ..config import OLLAMA_VL_MODEL
-from ..conditionSchema import Assessment
-from ..ollamaClient import chat_vision, extract_vietnamese
+from ..core.config import OLLAMA_VL_MODEL
+from ..domain.conditionSchema import Assessment
+from ..vlm.ollamaClient import chat_vision, extract_vietnamese
 
 _GRADE_RE = re.compile(
     r"(nhẹ|nhe|trung\s*bình|trung\s*binh|cao|không\s*rõ|khong\s*ro)",

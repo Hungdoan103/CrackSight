@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from .config import STORE_DIR
+from ..core.config import STORE_DIR
 
 CACHE_PATH = STORE_DIR / "geocode_cache.json"
 _USER_AGENT = "CrackInspect/0.1 (infrastructure inspection; contact=local)"

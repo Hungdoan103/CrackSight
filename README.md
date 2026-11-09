@@ -192,7 +192,7 @@ Interactive docs: **http://127.0.0.1:8000/docs**
 ```text
 CrackInspect/
 ├── apps/
-│   ├── api/                   # FastAPI service (main.py + crackinspect/)
+│   ├── api/                   # FastAPI (main.py + crackinspect/{core,detection,vlm,lidar,...})
 │   └── web/                   # Next.js UI + /darwin map
 ├── configs/                   # Shared runtime config (condition rules)
 ├── docs/                      # Design system, QA notes, samples

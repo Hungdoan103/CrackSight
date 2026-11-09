@@ -10,7 +10,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from .config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_VL_MODEL, VL_MAX_SIDE
+from ..core.config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_VL_MODEL, VL_MAX_SIDE
 
 _THINK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
 _VI_RE = re.compile(
@@ -218,7 +218,7 @@ def chat_vision(
     return text
 
 def _size_route(path: Path) -> str:
-    from .sceneClassify import classify_scene_cv
+    from ..detection.sceneClassify import classify_scene_cv
 
     name, _ = classify_scene_cv(path)
     return name
@@ -261,7 +261,7 @@ def classify_scene(path: Path) -> tuple[str, str]:
             extract=False,
         )
     except Exception as exc:
-        from .sceneClassify import classify_scene_cv as _cv
+        from ..detection.sceneClassify import classify_scene_cv as _cv
 
         name, why = _cv(path)
         return name, f"CV ({why}; VLM lỗi: {exc})"
@@ -271,7 +271,7 @@ def classify_scene(path: Path) -> tuple[str, str]:
         return "lcw", f"VLM: hiện trường ({text[:80]})"
     if code == "conglomerate":
         return "conglomerate", f"VLM: cận cảnh ({text[:80]})"
-    from .sceneClassify import classify_scene_cv as _cv
+    from ..detection.sceneClassify import classify_scene_cv as _cv
 
     name, why = _cv(path)
     return name, f"CV ({why}; VLM không rõ: {text[:80]})"

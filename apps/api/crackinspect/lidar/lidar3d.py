@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from .config import (
+from ..core.config import (
     LIDAR_3D_GGUF,
     LIDAR_3D_MMPROJ,
     LIDAR_3D_MODEL_DIR,

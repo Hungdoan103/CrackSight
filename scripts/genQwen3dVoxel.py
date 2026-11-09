@@ -9,7 +9,7 @@ _API_ROOT = Path(__file__).resolve().parents[1] / "apps" / "api"
 if str(_API_ROOT) not in sys.path:
     sys.path.insert(0, str(_API_ROOT))
 
-from crackinspect.lidar3d import generate_scene_via_llama_server, render_birdeye_preview
+from crackinspect.lidar.lidar3d import generate_scene_via_llama_server, render_birdeye_preview
 
 
 def main() -> None:

@@ -65,7 +65,7 @@ BasicVSR_PlusPlus/
 third_party/BasicVSR_PlusPlus/
 
 # Local deblur module (not published)
-apps/api/crackinspect/deblur.py
+apps/api/crackinspect/enhancement/deblur.py
 
 # Hugging Face / download caches
 **/.cache/

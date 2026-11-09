@@ -4,7 +4,7 @@ import json
 import re
 from pathlib import Path
 
-from .config import SOURCE_KINDS
+from ..core.config import SOURCE_KINDS
 from .ollamaClient import chat_vision
 from .summarize import gate_vl_text
 

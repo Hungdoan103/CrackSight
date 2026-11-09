@@ -16,7 +16,7 @@ from io import BytesIO
 import numpy as np
 from PIL import Image
 
-from crackinspect.config import (
+from crackinspect.core.config import (
     ANNOTATED_ROOT,
     CAPTION_WORKERS,
     CONGLOMERATE_WEIGHTS,
@@ -45,19 +45,19 @@ from crackinspect.config import (
     VLM_ROUTE,
 )
 from crackinspect.agents.orchestrate import load_condition_rules, load_last_condition
-from crackinspect.lasViewer import build_las_viewer, build_voxel_viewer, list_las_files
-from crackinspect.lidarMap import build_overlay, list_map_las
-from crackinspect.lidar3d import (
+from crackinspect.lidar.lasViewer import build_las_viewer, build_voxel_viewer, list_las_files
+from crackinspect.lidar.lidarMap import build_overlay, list_map_las
+from crackinspect.lidar.lidar3d import (
     generate_from_las,
     generate_scene_via_llama_server,
     model_status as lidar_3d_status,
     render_birdeye_preview,
 )
-from crackinspect.realesrgan import cache_path, enhance_inspect_jpeg, release_realesrgan
-from crackinspect.geocode import reverse_geocode
-from crackinspect.pipeline import analyze_bundle, refine_session_sift
-from crackinspect.report import preview_path, scene_text
-from crackinspect.summarize import answer_chat, build_review, describe_closeup, format_closeup
+from crackinspect.enhancement.realesrgan import cache_path, enhance_inspect_jpeg, release_realesrgan
+from crackinspect.geo.geocode import reverse_geocode
+from crackinspect.detection.pipeline import analyze_bundle, refine_session_sift
+from crackinspect.vlm.report import preview_path, scene_text
+from crackinspect.vlm.summarize import answer_chat, build_review, describe_closeup, format_closeup
 
 app = FastAPI(title="CrackInspect", version="0.1.0")
 app.add_middleware(

@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from PIL import Image
 
-from .config import REALESRGAN_CKPT, SHARPEN_DIR
+from ..core.config import REALESRGAN_CKPT, SHARPEN_DIR
 from .deblur import release_gopro
 
 _model: nn.Module | None = None

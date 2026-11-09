@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from ..conditionSchema import ConditionRecord, FinalCondition
-from ..config import INSPECT_ROOT, STORE_DIR
+from ..domain.conditionSchema import ConditionRecord, FinalCondition
+from ..core.config import INSPECT_ROOT, STORE_DIR
 from .projectManager import run_project_manager
 from .supervisor import _detector_grade_hint, run_supervisor
 from .vlmAssessors import run_vlm_assessments
@@ -66,7 +66,7 @@ def run_condition_pipeline(
     stats: str = "",
     rules: dict | None = None,
 ) -> ConditionRecord:
-    from ..config import MULTI_AGENT_MODE
+    from ..core.config import MULTI_AGENT_MODE
 
     path = Path(image_path)
     rules_data = rules or load_condition_rules()
@@ -81,7 +81,7 @@ def run_condition_pipeline(
     if agents:
         assessments = run_vlm_assessments(path, detect_ctx, agents, stats=stats)
     else:
-        from ..conditionSchema import Assessment
+        from ..domain.conditionSchema import Assessment
         from .supervisor import _detector_grade_hint
 
         hint = _detector_grade_hint(detect_ctx)

@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image
 from PIL.ExifTags import GPSTAGS, TAGS
 
-from .config import ANNOTATED_ROOT
+from ..core.config import ANNOTATED_ROOT
 
 _CSV_INDEX: dict[str, dict] | None = None
 _CSV_FLOATS = (

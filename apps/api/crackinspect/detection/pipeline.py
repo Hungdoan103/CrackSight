@@ -10,9 +10,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from .agents import run_condition_pipeline
-from .caption import describe_scene_caption, fallback_caption
-from .config import (
+from ..agents import run_condition_pipeline
+from ..vlm.caption import describe_scene_caption, fallback_caption
+from ..core.config import (
     CAPTION_WORKERS,
     DESCRIBE_VL,
     MULTI_AGENT_MODE,
@@ -25,14 +25,14 @@ from .config import (
     SOURCE_KINDS,
     UPLOAD_DIR,
 )
-from .structureInspect import extract_structure_report, prose_from_structure
+from ..vlm.structureInspect import extract_structure_report, prose_from_structure
 from .crackContext import analyze_routed, release_detector, set_overlay_lang
-from .exifMeta import load_exif_for_image
-from .deblur import release_gopro
+from ..geo.exifMeta import load_exif_for_image
+from ..enhancement.deblur import release_gopro
 from .instances import apply_scale, refine_instances_sift
-from .realesrgan import release_realesrgan
-from .report import format_problem, format_template_report
-from .summarize import (
+from ..enhancement.realesrgan import release_realesrgan
+from ..vlm.report import format_problem, format_template_report
+from ..vlm.summarize import (
     describe_vl,
     format_detail_from_instances,
     is_real_detection,

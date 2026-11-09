@@ -8,7 +8,7 @@ import laspy
 import numpy as np
 from pyproj import Transformer
 
-from .config import LIDAR_MAP_CACHE, LIDAR_MAP_ROOT
+from ..core.config import LIDAR_MAP_CACHE, LIDAR_MAP_ROOT
 
 DEFAULT_EPSG = 32752
 CACHE_VERSION = 4  # + intensity for CloudCompare-like greyscale

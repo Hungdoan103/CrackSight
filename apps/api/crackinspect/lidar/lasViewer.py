@@ -6,7 +6,7 @@ from pathlib import Path
 import laspy
 import numpy as np
 
-from .config import LIDAR_DATA_ROOT, LIDAR_SCENE_DIR
+from ..core.config import LIDAR_DATA_ROOT, LIDAR_SCENE_DIR
 
 LAYER_COLORS = {
     "tree": (0.22, 0.72, 0.35),

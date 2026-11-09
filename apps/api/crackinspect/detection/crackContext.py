@@ -9,7 +9,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-from .config import (
+from ..core.config import (
     CONGLOMERATE_WEIGHTS,
     DETECT_BATCH,
     INPUT_SIZE,
@@ -187,7 +187,7 @@ def _route_paths(paths: list[Path]) -> tuple[dict[Path, str], dict[Path, str]]:
     first: dict[Path, str] = {}
     reasons: dict[Path, str] = {}
     if VLM_ROUTE:
-        from .ollamaClient import classify_scene
+        from ..vlm.ollamaClient import classify_scene
 
         for path in paths:
             name, why = classify_scene(path)

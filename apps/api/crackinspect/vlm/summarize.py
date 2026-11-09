@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from .config import CRACK_THRESHOLD, DESCRIBE_MIN_PIXELS, DESCRIBE_MIN_RATIO
+from ..core.config import CRACK_THRESHOLD, DESCRIBE_MIN_PIXELS, DESCRIBE_MIN_RATIO
 from .ollamaClient import _strip_think, chat, chat_vision, extract_vietnamese
 
 _HALLUCINATION_RE = re.compile(

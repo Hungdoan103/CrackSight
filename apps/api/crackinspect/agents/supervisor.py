@@ -5,9 +5,9 @@ import re
 from collections import Counter
 from typing import Any
 
-from ..config import OLLAMA_MODEL
-from ..conditionSchema import Assessment, SupervisorResult
-from ..ollamaClient import chat
+from ..core.config import OLLAMA_MODEL
+from ..domain.conditionSchema import Assessment, SupervisorResult
+from ..vlm.ollamaClient import chat
 
 _VALID = {"nhẹ", "trung bình", "cao", "không rõ"}
 

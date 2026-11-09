@@ -1,0 +1,1 @@
+"""CrackInspect core package."""

@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from .config import OVERLAY_DIR, PROJECT_ROOT
+from ..core.config import OVERLAY_DIR, PROJECT_ROOT
 
 CRACK_COLOR = (255, 40, 40)
 BOX_COLOR = (255, 220, 0)
@@ -199,7 +199,7 @@ def find_gt_mask(image_path: Path) -> Path | None:
     sibling = _sibling_mask(image_path)
     if sibling:
         return sibling
-    from .exifMeta import annotated_gt_path
+    from ..geo.exifMeta import annotated_gt_path
 
     annotated = annotated_gt_path(image_path)
     if annotated:
@@ -427,7 +427,7 @@ def save_overlay(
     refine_sift: bool | None = None,
     lang: str = "vi",
 ) -> dict:
-    from .config import DETECT_SIFT
+    from ..core.config import DETECT_SIFT
     from .instances import find_instances, refine_instances_sift
 
     image_path = Path(image_path)
