@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "domain": "crack_condition",
+  "grades": [
+    {
+      "id": "nhe",
+      "label": "nhẹ",
+      "description": "Vết nhỏ, chưa ảnh hưởng kết cấu rõ; theo dõi định kỳ."
+    },
+    {
+      "id": "trung_binh",
+      "label": "trung bình",
+      "description": "Vết rõ, ảnh hưởng cục bộ; ưu tiên kiểm tra chi tiết."
+    },
+    {
+      "id": "cao",
+      "label": "cao",
+      "description": "Vết rộng/dài hoặc nhiều nhánh; rủi ro kết cấu, cần xử lý sớm."
+    },
+    {
+      "id": "khong_ro",
+      "label": "không rõ",
+      "description": "Ảnh hoặc evidence không đủ để chấm mức độ."
+    }
+  ],
+  "evidence_requirements": {
+    "min_assessors": 2,
+    "require_visible_crack_mention": true,
+    "supported_if_grades_agree": true,
+    "supported_if_majority_and_detector_agrees": true
+  },
+  "supervisor": {
+    "supported_when": [
+      "At least two VLM assessors return the same grade (nhẹ|trung bình|cao).",
+      "Or majority grade matches detector severity hint from crack_ratio / instance levels.",
+      "Each supporting assessor cites at least one concrete visual evidence phrase."
+    ],
+    "unresolved_when": [
+      "Assessor grades conflict (e.g. nhẹ vs cao) with no majority.",
+      "Any assessor returns không rõ and others disagree.",
+      "Evidence is empty or only generic text without crack features.",
+      "Detector says no real crack but VLMs claim cao/trung bình."
+    ]
+  },
+  "project_manager": {
+    "enabled": true,
+    "actions": ["resolve", "refer"],
+    "bounded_note": "MVP: one LLM call; no automatic rule rewrite. Feedback stored for later review."
+  },
+  "agents": [
+    {
+      "id": "scene_overview",
+      "role": "overview",
+      "instruction": "Nhìn toàn cảnh ảnh hiện trường. Nêu loại cấu kiện (nếu thấy), có/không vết nứt, vị trí tương đối. Chấm grade: nhẹ|trung bình|cao|không rõ. Liệt kê 1-3 bằng chứng nhìn thấy (cụm ngắn)."
+    },
+    {
+      "id": "evidence_closeup",
+      "role": "evidence",
+      "instruction": "Tập trung dấu hiệu nứt nhìn thấy: hướng, bề rộng cảm tính, nhánh, ẩm/bụi trong khe. Chấm grade: nhẹ|trung bình|cao|không rõ. Bằng chứng phải cụ thể trên ảnh."
+    },
+    {
+      "id": "risk_action",
+      "role": "risk",
+      "instruction": "Đánh giá rủi ro và hành động đề xuất (theo dõi / kiểm tra chi tiết / xử lý). Chấm grade: nhẹ|trung bình|cao|không rõ. Nêu evidence hỗ trợ quyết định."
+    }
+  ]
+}

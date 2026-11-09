@@ -1,0 +1,11 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-multipart>=0.0.12
+numpy>=1.24
+opencv-python
+Pillow
+huggingface_hub>=0.26
+laspy>=2.5
+pyproj>=3.6
+# torch / torchvision: reuse the CrackVLM CUDA env (torch 2.13+cu126).
+# Qwen3.5-4B-3D-Coder GGUF lives on E: (see scripts/downloadQwen353dCoder.ps1).
