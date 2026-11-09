@@ -42,7 +42,7 @@ Most demos draw fancy boxes. CrackInspect is built for **inspection workflows**:
 | **Detection** | Pixel crack masks, instance boxes, severity, axis, optional SIFT refine |
 | **Evaluation** | 4-panel view (Original / GT / Prediction / TP·FP·FN) when ground truth exists |
 | **Vision-language** | Qwen3-VL scene captions, structure JSON, multi-agent condition pipeline, chat Q&A |
-| **Enhancement** | Close-up inspect + optional Real-ESRGAN / BasicVSR++ sharpen paths |
+| **Enhancement** | Close-up inspect + optional Real-ESRGAN sharpen paths |
 | **Darwin map** | Esri imagery, MapLibre 3D LiDAR point cloud, intensity/height coloring |
 | **Photo GPS** | EXIF/CSV coordinates → map markers + Nominatim address (cached) |
 | **i18n** | VI / EN for UI, reports, overlay captions, quality notes |
