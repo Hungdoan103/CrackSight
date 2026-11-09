@@ -17,7 +17,7 @@ _DETAIL_RE = re.compile(
 _CM_RE = re.compile(r"\d+(?:[.,]\d+)?\s*cm\b", re.IGNORECASE)
 _MM_RE = re.compile(r"\d+(?:[.,]\d+)?\s*mm\b", re.IGNORECASE)
 _GPS_CLAIM_RE = re.compile(
-    r"(GPS|tọa\s*độ|Darwin|latitude|longitude|"
+    r"(GPS|tọa\s*độ|Australia|Darwin|latitude|longitude|"
     r"[-+]?\d{1,2}\.\d{3,}\s*,\s*[-+]?\d{1,3}\.\d{3,})",
     re.IGNORECASE,
 )

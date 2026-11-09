@@ -1,6 +1,6 @@
 # CrackInspect Web
 
-Next.js 15 UI for inspection workflows and Darwin map.
+Next.js 15 UI for inspection workflows and Australia map.
 
 ```bash
 cd apps/web

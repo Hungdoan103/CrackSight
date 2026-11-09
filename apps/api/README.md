@@ -1,6 +1,6 @@
 # CrackInspect API
 
-FastAPI service for detection, VLM reporting, and Darwin LiDAR endpoints.
+FastAPI service for detection, VLM reporting, and Australia LiDAR endpoints.
 
 ```bash
 # from repo root

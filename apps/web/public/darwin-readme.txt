@@ -1,4 +1,4 @@
-Darwin 3D (Cesium Photoreal)
+Australia 3D (Cesium Photoreal)
 =============================
 1. Create a Cesium ion account: https://ion.cesium.com
 2. Enable Google Photorealistic 3D Tiles for the account
@@ -10,4 +10,4 @@ Darwin 3D (Cesium Photoreal)
 5. Open http://127.0.0.1:3000/darwin
 
 Without a token the page falls back to Esri World Imagery + terrain.
-Vehicles and streetlights are simulated along Darwin CBD corridors.
+Vehicles and streetlights are simulated along Australia CBD corridors.

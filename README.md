@@ -1,6 +1,6 @@
 # CrackInspect
 
-**Infrastructure crack inspection for engineers** — upload field or close-up photos, get real DeepInspect segmentation overlays, structured VLM reports, and Darwin 3D LiDAR context with photo GPS.
+**Infrastructure crack inspection for engineers** — upload field or close-up photos, get real DeepInspect segmentation overlays, structured VLM reports, and Australia 3D LiDAR context with photo GPS.
 
 <p align="center">
   <a href="#features">Features</a> ·
@@ -31,7 +31,7 @@ Most demos draw fancy boxes. CrackInspect is built for **inspection workflows**:
 - **Honest measurements** — mm / GPS only from CSV + EXIF when metadata exists  
 - **Scene-aware routing** — field photos → field model; close-ups → close-up model  
 - **Bilingual UI** — Vietnamese / English end-to-end (including burned-in panel captions)  
-- **Spatial context** — Darwin satellite + WebGL LiDAR 3D + photo GPS pins with reverse-geocoded addresses  
+- **Spatial context** — Australia satellite + WebGL LiDAR 3D + photo GPS pins with reverse-geocoded addresses  
 
 ---
 
@@ -43,7 +43,7 @@ Most demos draw fancy boxes. CrackInspect is built for **inspection workflows**:
 | **Evaluation** | 4-panel view (Original / GT / Prediction / TP·FP·FN) when ground truth exists |
 | **Vision-language** | Qwen3-VL scene captions, structure JSON, multi-agent condition pipeline, chat Q&A |
 | **Enhancement** | Close-up inspect + optional Real-ESRGAN sharpen paths |
-| **Darwin map** | Esri imagery, MapLibre 3D LiDAR point cloud, intensity/height coloring |
+| **Australia map** | Esri imagery, MapLibre 3D LiDAR point cloud, intensity/height coloring |
 | **Photo GPS** | EXIF/CSV coordinates → map markers + Nominatim address (cached) |
 | **i18n** | VI / EN for UI, reports, overlay captions, quality notes |
 
@@ -59,7 +59,7 @@ flowchart LR
   DI --> Overlay["Mask · boxes · panel"]
   API --> VLM["Ollama\nQwen3-VL"]
   VLM --> Report["Caption · structure · agents"]
-  API --> Map["Darwin MapLibre\nLiDAR + GPS"]
+  API --> Map["Australia MapLibre\nLiDAR + GPS"]
   Meta["CrackVLM weights\n+ annotated CSV/EXIF"] -.-> DI
   Meta -.-> Report
 ```
@@ -132,7 +132,7 @@ Or: `make dev-api` / `make dev-web`
 | Service | URL |
 |---------|-----|
 | Web app | http://127.0.0.1:3000 |
-| Darwin map | http://127.0.0.1:3000/darwin |
+| Australia map | http://127.0.0.1:3000/darwin |
 | API health | http://127.0.0.1:8000/health |
 | OpenAPI | http://127.0.0.1:8000/docs |
 
@@ -152,7 +152,7 @@ Copy `.env.example` → `.env` (or export env vars):
 | `CRACKINSPECT_MULTI_AGENT` | `0` | `0` / `1` / `full` assessors |
 | `CRACKINSPECT_SCENE_CAPTION` | `1` | VLM scene captions |
 | `CRACKINSPECT_KEEP_MODELS` | `1` | Keep DeepInspect weights warm |
-| `CRACKINSPECT_LIDAR_MAP` | `Data/Pointcloud off grounds` | Darwin LAS corridor |
+| `CRACKINSPECT_LIDAR_MAP` | `Data/Pointcloud off grounds` | Australia LAS corridor |
 
 ---
 
@@ -162,7 +162,7 @@ Copy `.env.example` → `.env` (or export env vars):
 2. Drop JPG/PNG (close-up photos and/or field shots).  
 3. Set image source if known → **Detect**.  
 4. Review **DeepInspect** overlay, **Panel 4** metrics, crack list, VLM / structure tabs.  
-5. Open **Darwin Map** to see LiDAR + GPS pins from the latest Detect batch (when EXIF/CSV has coordinates).
+5. Open **Australia Map** to see LiDAR + GPS pins from the latest Detect batch (when EXIF/CSV has coordinates).
 
 > **Note:** Panel text language follows the UI language at Detect time. Switch language and Detect again to refresh burned-in captions.
 
@@ -177,7 +177,7 @@ Copy `.env.example` → `.env` (or export env vars):
 | `POST` | `/analyze-sample` | Built-in sample images |
 | `POST` | `/chat` | Session Q&A over analyzed images |
 | `GET` | `/last` | Last session records |
-| `GET` | `/session/gps` | GPS points for Darwin (`lang`, `include_all`) |
+| `GET` | `/session/gps` | GPS points for Australia (`lang`, `include_all`) |
 | `GET` | `/lidar/map-overlay` | Downsampled WGS84 LiDAR for MapLibre |
 | `POST` | `/lidar/build` | Three.js LAS viewer |
 | `GET` | `/sharpen` | Close-up enhance |
@@ -243,7 +243,7 @@ DeepInspect (CrackInspect) — including source code, documentation, branding, a
 | Item | Detail |
 |------|--------|
 | **Rights holder** | CivilSmart Technology |
-| **On-map attribution** | Darwin UI shows **License data** / **CivilSmart Technology** (top-right) |
+| **On-map attribution** | Australia UI shows **License data** / **CivilSmart Technology** (top-right) |
 | **Covered assets** | Application code, branding, licensed map & geospatial / LiDAR materials |
 | **Full text** | See [`LICENSE`](./LICENSE) in this repository |
 
@@ -252,6 +252,6 @@ Unauthorized copying, modification, distribution, or commercial use is prohibite
 ---
 
 <p align="center">
-  <b>CrackInspect</b> — DeepInspect · Vision-Language · Darwin LiDAR<br/>
+  <b>CrackInspect</b> — DeepInspect · Vision-Language · Australia LiDAR<br/>
   License data · CivilSmart Technology
 </p>
